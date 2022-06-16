@@ -3,18 +3,20 @@ class Employee {
         this.name = name;
         this.id = id;
         this.email = email;
-    }
+    };
 
     getName() {
-        console.log(`${name}`);
-    }
+        console.log(this.name);
+    };
     getId() {
-        console.log(`${id}`);
-    }
+        console.log(this.id);
+    };
     getEmail() {
-        console.log(`${email}`);
-    }
+        console.log(this.email);
+    };
     getRole() {
-        return Employee;
-    }
-}
+        return this.role = "Employee";
+    };
+};
+
+module.exports = Employee;
