@@ -1,3 +1,6 @@
+const fs = require('fs');
+const inquirer = require('inquirer');
+
 class Employee {
     constructor(name, id, email) {
         this.name = name;
@@ -20,3 +23,28 @@ class Employee {
 };
 
 module.exports = Employee;
+
+
+const questions = [
+    {
+        type: 'input',
+        message: 'What is the Employee\'s name?',
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: 'What is the Employee\'s id?',
+        name: 'id',
+    },
+    {
+        type: 'input',
+        message: 'What is the Employee\'s id?',
+        name: 'email'
+    },
+];
+
+
+inquirer.prompt(questions).then((answers) => {
+    console.log(answers);
+    utils.generateHtml(answers);
+});
