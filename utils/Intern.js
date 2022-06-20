@@ -11,7 +11,7 @@ const Employee = require('./Employee');
         return this.school;
     }
     getRole() {
-        return Intern
+        return 'Intern'
     }
 }
 
