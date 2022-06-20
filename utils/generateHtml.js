@@ -28,7 +28,7 @@ const generateHtml = ({ }) => {
         `);
 
 
-    fs.writeFileSync('./output/index.html', template);
+    fs.writeFileSync('../output/index.html', template);
     console.log('Team Created');
     process.exit();
 };

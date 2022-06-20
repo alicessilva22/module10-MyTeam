@@ -1,6 +1,6 @@
 class Engineer extends Employee {
-    super(github);
-    getGithub();
+    super(github)
+    getGithub()
     getRole() {
         return Engineer
     }

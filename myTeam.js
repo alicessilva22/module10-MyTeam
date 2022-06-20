@@ -1,10 +1,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateHtml = require('utils/generateHtml.js')
-// const Employee = require('.utils/Employee.js');
-// const Engineer = require('.utils/Engineer.js');
-// const Intern = require('.utils/Intern.js');
-// const Manager = require('.utils/Manager.js');
+const generateHtml = require('./utils/generateHtml');
+const Employee = require('./utils/Employee');
+const Engineer = require('./utils/Engineer');
+const Intern = require('./utils/Intern');
+const Manager = require('./utils/Manager');
 
 const questions = [
     {
