@@ -1,6 +1,5 @@
-class Manager extends Employee {
-    super(officeNumber);
-    getRole() {
-        return Manager
-    }
-}
+const Manager= require('../utils/Manager');
+
+describe('Manager', () => {
+    
+})

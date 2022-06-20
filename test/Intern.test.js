@@ -1,7 +1,5 @@
-class Intern extends Employee {
-    super(school);
-    getSchool();
-    getRole() {
-        return Intern
-    }
-}
+const Intern = require('../utils/Intern');
+
+describe('Intern', () => {
+    
+})
