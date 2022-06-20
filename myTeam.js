@@ -19,7 +19,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What is the Employee\'s id?',
+        message: 'What is the Employee\'s email?',
         name: 'email'
     },
 ];
