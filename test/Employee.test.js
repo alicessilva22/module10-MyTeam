@@ -28,6 +28,15 @@ test('can we get a name with the class method', () => {
     expect(emp.getName()).toBe('peter parker')
 })
 test('can we get an id with the class method', () => {
-    let emp = new Employee(1)
+    let emp = new Employee('peter parker', 1)
     expect(emp.getId()).toBe(1)
+})
+test('can we get email through the class method', () => {
+    let emp = new Employee('peter parker', 1, 'peter@parker.com')
+    expect(emp.getEmail()).toBe('peter@parker.com')
+})
+
+test('can we get a role with the class method', () => {
+    let emp = new Employee('peter parker', 1, 'peter@parker.com')
+    expect(emp.getRole()).toBe("Employee")
 })
