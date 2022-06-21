@@ -3,13 +3,13 @@ const generateHtml = ({
     name,
     id,
     email,
-    officeNumber,
     github,
-    school
+    school,
+    officeNumber,
 }) => {
     console.log('GENERATING HTML');
-    const template = (`
-    <!DOCTYPE html>
+    const template = (
+        `<!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -28,31 +28,10 @@ const generateHtml = ({
     
         <div class="employees">
             <section class="card">
-                <header>`${name}`</header>
+                <header>${name}</header>
                 <ul>
-                    <li>`${id} `</li>
-                    <li>`${email} `</li>
-                </ul>
-            </section>
-            <section class="card">
-                <header>Employee Name</header>
-                <ul>
-                    <li>ID</li>
-                    <li>Email</li>
-                </ul>
-            </section>
-            <section class="card">
-                <header>Employee Name</header>
-                <ul>
-                    <li>ID</li>
-                    <li>Email</li>
-                </ul>
-            </section>
-            <section class="card">
-                <header>Employee Name</header>
-                <ul>
-                    <li>ID</li>
-                    <li>Email</li>
+                    <li>${id}</li>
+                    <li>${email}</li>
                 </ul>
             </section>
         </div>
@@ -62,8 +41,9 @@ const generateHtml = ({
     </html>
         `);
 
-    fs.writeFileSync('./output/index.html', template(teamMembers))
+    fs.writeFileSync('./output/index.html', template)
     console.log('Team Created');
+    process.exit();
 };
 
 module.exports = {

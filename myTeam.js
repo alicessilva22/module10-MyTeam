@@ -8,6 +8,7 @@ const Manager = require('./utils/Manager');
 let teamMembers = []
 
 inquirer.prompt([
+    // const questions = [
     {
         type: 'input',
         message: 'What is the Manager\'s name?',
@@ -27,8 +28,9 @@ inquirer.prompt([
         type: 'input',
         message: 'What is the Manager\'s office number?',
         name: 'officeNumber',
-    }
-]).then(answers => {
+    },
+ 
+]).then((answers) => {
     const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
     teamMembers.push(manager)
     console.log(teamMembers);
@@ -42,14 +44,15 @@ function mainQuestion() {
             message: 'What would you like to do next?',
             choices: ['Add Engineer', 'Add Intern', 'Done'],
             name: 'main',
-        }
-    ]).then(answer => {
+        },
+    ]).then((answer) => {
         switch (answer.main) {
             case "Add Engineer": addEngineer()
                 break;
             case "Add Intern": addIntern()
                 break;
-            default: createTeam()
+            case "Done": createTeam()
+                break;
         }
     })
 }
@@ -75,8 +78,8 @@ function addEngineer() {
             type: 'input',
             message: 'What is the Engineer\'s GitHub?',
             name: 'github',
-        }
-    ]).then(answers => {
+        },
+    ]).then((answers) => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
         teamMembers.push(engineer)
         console.log(teamMembers);
@@ -105,8 +108,9 @@ function addIntern() {
             type: 'input',
             message: 'What is the Intern\'s school?',
             name: 'school',
-        }
-    ]).then(answers => {
+        },
+ 
+    ]).then((answers) => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
         teamMembers.push(intern)
         console.log(teamMembers);
@@ -114,6 +118,11 @@ function addIntern() {
     })
 }
 
+// inquirer.prompt(questions).then((answers) => {
+//     console.log(answers);
+//     utils.generateHtml(answers);
+// });
+
 function createTeam() {
-   utils.generateHtml()
-    };
+utils.generateHtml();
+};
