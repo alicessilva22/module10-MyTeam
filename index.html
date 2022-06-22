@@ -5,25 +5,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Minified version -->
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <title>My Team</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="https://kit.fontawesome.com/41b233bbbd.js" crossorigin="anonymous"></script>
+    <title>Team Generator</title>
 </head>
 
 <body>
     <header>
         <h1>My Team</h1>
     </header>
-
-    <div class="employees">
-        <section class="card">
-            <header>Employee Name</header>
-            <ul>
-                <li>ID</li>
-                <li>Email</li>
-            </ul>
-        </section>
-    </div>
+    <section class="team">
+        <div class="card">
+            <header>
+                <h2 class="card-title">Manager name</h2>
+                <h3 class="card-title"><i class="fa-solid fa-suitcase"></i> Manager</h3>
+            </header>
+            <div class="card-body">
+                <ul class="list">
+                    <li class="list-id">ID: Manager ID</li>
+                    <li class="list-email">Email: <a href="mailto:manager@email.com">manager@email.com</a></li>
+                    <li class="list-office">Office number: Manager Office</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <header>
+                <h2 class="card-title">Engineer name</h2>
+                <h3 class="card-title"><i class="fa-solid fa-laptop-code"></i> Engineer</h3>
+            </header>
+            <div class="card-body">
+                <ul class="list">
+                    <li class="list-id">ID: Engineer id</li>
+                    <li class="list-email">Email: <a href="mailto:engineer@email.com">engineer@email.com</a></li>
+                    <li class="list-github">GitHub: <a href="https://github.com/{{ github }}" target="_blank"
+                            rel="noopener noreferrer">engineer_github</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <header>
+                <h2 class="card-title">Intern name</h2>
+                <h3 class="card-title"><i class="fa-solid fa-file-pen"></i> Intern</h3>
+            </header>
+            <div class="card-body">
+                <ul class="list">
+                    <li class="list-id">ID: Intern id</li>
+                    <li class="list-email">Email: <a href="mailto:intern@email.com">intern@email.com</a></li>
+                    <li class="list-school">School: Intern School</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
 </body>
 

@@ -1,11 +1,13 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const utils = require('./utils/generateHtml');
+const generate = require('./utils/generateHtml');
 const Engineer = require('./utils/Engineer');
 const Intern = require('./utils/Intern');
 const Manager = require('./utils/Manager');
 
-let teamMembers = []
+const teamMembers = []
+
+
 
 inquirer.prompt([
     // const questions = [
@@ -29,7 +31,7 @@ inquirer.prompt([
         message: 'What is the Manager\'s office number?',
         name: 'officeNumber',
     },
- 
+
 ]).then((answers) => {
     const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
     teamMembers.push(manager)
@@ -42,7 +44,7 @@ function mainQuestion() {
         {
             type: 'list',
             message: 'What would you like to do next?',
-            choices: ['Add Engineer', 'Add Intern', 'Done'],
+            choices: ['Add Engineer', 'Add Intern', 'Finish'],
             name: 'main',
         },
     ]).then((answer) => {
@@ -51,7 +53,7 @@ function mainQuestion() {
                 break;
             case "Add Intern": addIntern()
                 break;
-            case "Done": createTeam()
+            case "Finish": createTeam()
                 break;
         }
     })
@@ -109,20 +111,26 @@ function addIntern() {
             message: 'What is the Intern\'s school?',
             name: 'school',
         },
- 
+
     ]).then((answers) => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
         teamMembers.push(intern)
         console.log(teamMembers);
         mainQuestion()
     })
+
 }
+
+function createTeam() {
+    fs.writeFile('./output/index.html', generate(teamMembers), (err) => {
+        if (err) throw err;
+        console.log('created index');
+    });
+};
 
 // inquirer.prompt(questions).then((answers) => {
 //     console.log(answers);
 //     utils.generateHtml(answers);
 // });
 
-function createTeam() {
-utils.generateHtml();
-};
+

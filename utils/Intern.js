@@ -7,7 +7,7 @@ const Employee = require('./Employee');
 
         }
  
-    getschool() {
+    getSchool() {
         return this.school;
     }
     getRole() {
